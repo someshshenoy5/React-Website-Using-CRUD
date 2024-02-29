@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "id": 2,
+      "name": "somehs",
+      "email": "sdfsfs@gmail.com",
+      "phone": "234242342432"
+    },
+    {
+      "id": 3,
+      "name": "Gaurav",
+      "email": "gaurav.com",
+      "phone": "2323224234"
+    },
+    {
+      "id": 4,
+      "name": "pratik",
+      "email": "pratik.com",
+      "phone": "98649693.com"
+    },
+    {
+      "id": 5,
+      "name": "somesh shenoy",
+      "email": "soemshsf",
+      "phone": "3423235345"
+    },
+    {
+      "id": 6,
+      "name": "fasf",
+      "email": "someshshheoh@gmail.cm",
+      "phone": "23424235232"
+    }
+  ]
+}

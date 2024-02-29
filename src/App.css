@@ -1,0 +1,32 @@
+.container{
+    padding: 50px 10%;
+}
+table{
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+table tr{
+    border-bottom: 1px solid black;
+    /* background-color:  #a2fc6a; */
+    color: black !important;
+}
+table tr th, table tr td{
+    padding: 10px;
+}   
+
+.form-div{
+    margin-bottom: 10px;
+}
+.form-div form input{
+    width: 43.5%;
+    padding: 10px;
+}
+.form-div form button{
+    width: 10%;
+    padding: 5px;
+    cursor: pointer;
+    background-color: green;
+    color: white;
+}
