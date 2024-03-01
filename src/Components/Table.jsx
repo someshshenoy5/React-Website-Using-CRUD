@@ -2,12 +2,12 @@ import axios, { AxiosHeaders } from "axios";
 import React, { useEffect, useState } from "react";
 const Table = () => {
   const [data, setData] = useState([]);
-  const [name,setName] = useState("")
-  const [email,setEmail] = useState("")
-  const [phone,setPhone] = useState("")
-  const [address,setAddress] = useState("")
-  const [className,setClassName] = useState("")
-  const [fathersName,setFathersName] =useState('')
+  const [name,setName] = useState(null)
+  const [email,setEmail] = useState(null)
+  const [phone,setPhone] = useState(null)
+  const [address,setAddress] = useState(null)
+  const [className,setClassName] = useState(null)
+  const [fathersName,setFathersName] =useState(null)
   const [uname,usetName] = useState("")
   const [uemail,usetEmail] = useState("")
   const [uphone,usetPhone] = useState("")
@@ -30,7 +30,7 @@ const Table = () => {
     if (data.length === 0) {
       // If it's empty, set id to 1
       const id = 1;
-      axios.post("/api/Student", { id: id, name: name, email: email, phone: phone, address:address, className:className, fathersName:fathersName })
+      axios.post("/api/Student", { id: id, name: name, email: email, phone: phone, address: address, className: className, fathersName: fathersName })
         .then((res) => location.reload())
         .catch((err) => console.log(err));
     } else {
@@ -45,7 +45,8 @@ const Table = () => {
 const handleEdit = (id) => {
     axios
       .get(`http://localhost:8080/api/Student/${id}`)
-      .then((res) => {usetName(res.data[0].name) 
+      .then((res) => {
+        usetName(res.data[0].name) 
         usetEmail(res.data[0].email) 
         usetPhone(res.data[0].phone)
         usetAddress(res.data[0].address)
