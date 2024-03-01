@@ -19,11 +19,23 @@ const Table = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const id =data[data.length-1] .id +1;
-    axios.post("http://localhost:8080/api/Student",{id: id , name: name, email: email, phone: phone})
-    .then((res) => location.reload())
-    .catch((err)=>console.log(er))
-}
+    
+    // Check if data array is empty
+    if (data.length === 0) {
+      // If it's empty, set id to 1
+      const id = 1;
+      axios.post("/api/Student", { id: id, name: name, email: email, phone: phone })
+        .then((res) => location.reload())
+        .catch((err) => console.log(err));
+    } else {
+      // If it's not empty, calculate id based on the last element's id
+      const id = data[data.length - 1].id + 1;
+      axios.post("/api/Student", { id: id, name: name, email: email, phone: phone })
+        .then((res) => location.reload())
+        .catch((err) => console.log(err));
+    }
+  }
+  
 const handleEdit = (id) => {
     axios
       .get(`http://localhost:8080/api/Student/${id}`)
