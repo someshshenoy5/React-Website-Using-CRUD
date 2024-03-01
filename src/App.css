@@ -14,6 +14,8 @@ table tr{
 }
 table tr th, table tr td{
     padding: 10px;
+    word-wrap: break-word;
+      
 }   
 
 .form-div{
