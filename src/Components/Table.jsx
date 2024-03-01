@@ -12,7 +12,7 @@ const Table = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/users")
+      .get("http://localhost:8080/api/Students")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -20,13 +20,13 @@ const Table = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const id =data[data.length-1] .id +1;
-    axios.post("http://localhost:3000/users",{id: id , name: name, email: email, phone: phone})
+    axios.post("http://localhost:8080/api/Student",{id: id , name: name, email: email, phone: phone})
     .then((res) => location.reload())
     .catch((err)=>console.log(er))
 }
 const handleEdit = (id) => {
     axios
-      .get(`http://localhost:3000/users/${id}`)
+      .get(`http://localhost:8080/api/Student/${id}`)
       .then((res) => {usetName(res.data[0].name) 
         usetEmail(res.data[0].email) 
         usetPhone(res.data[0].phone)})
@@ -35,13 +35,13 @@ const handleEdit = (id) => {
     
 }
 const handleUpdate=() =>{
-  axios.put(`http://localhost:3000/users/${editId}`,{id: editId , name: uname, email: uemail, phone: uphone})
+  axios.put(`http://localhost:8080/api/Student/${editId}`,{id: editId , name: uname, email: uemail, phone: uphone})
    .then((res)=>{location.reload()
 setEditId(-1)})
 .catch(err=>console.log(err))
 }
 const handleDelete =(id)=>{
-    axios.delete(`http://localhost:3000/users/${id}`)
+    axios.delete(`http://localhost:8080/api/Student/${id}`)
  .then(res => {location.reload()})
  .catch(err=>console.log(err))
 }
